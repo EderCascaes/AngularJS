@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listFones">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="lib/angular/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script type="text/javascript" src="js/home.js"></script>
+
+
+    <title>Lista telefonica</title>
+</head>
+    <body  data-ng-controller="listFonesCtrl">      
+        
+        
+        <div ng-include src="'header.html'"> Inclusion header</div>
+
+        <hr class="my-4">
+            <div class="row">
+                <dic class="offset-2 col-4">   
+                    <p>
+                    Como criar um modulo AngularJS , dentro dos conchetos é possível importar outros modulos do projeto.<br>
+                    <br>  
+                    1.  angular.module("listFones",[] );<br>
+                    <br>    
+                    Dentro da function, que recebe o $scope como parametro, que encarrergado de transportar informações entre controller e View.<br>
+                    2.  angular.module("listFones").controller("listFonesCtrl",  function($scope){
+                    <br>                    
+                    }); 
+                    </p>
+                </dic>
+                <dic class="col-6">
+                    <p>
+                    <img src="image/scriptAngularJS.png" style="width: 600px; height: 300px;">
+                    </p>
+                </dic>
+            </div>
+        <hr class="my-4">
+
+        <hr class="my-4">
+        <div class="row">
+            <dic class="offset-2 col-4">   
+                
+                <p>passing value  for  "ng-bind"  =>  ng-bind="app" </p>
+           
+                O ng-bing no "$scope" (controller) Get value in the  js for the html<br>
+                <h3 ng-bind="app"></h3>
+    
+                <p> passing the value contained in -app</p>
+                <h3>{{ app }}  aqui com duplo bigódes</h3>
+                <p> pode concatenar {{ app + " com qualquer coisa"}}</p>
+
+            </dic>
+            <dic class="col-6">
+                <p>
+                <img src="image/ng-bind.png" style="width: 600px; height: 250px;">
+                </p>
+            </dic>
+        </div>
+    <hr class="my-4">
+
+    <hr class="my-4">
+    <div class="row">
+        <dic class="offset-2 col-2">   
+            <p >ng-repeat   - Get value in the  js for the html  </p> 
+            Exemplos de ng-repeat:
+           
+        </dic>
+        <dic class="col-3">
+            <p>
+            <img src="image/ng-repeat_01.png" style="width: 450px; height: 400px; ">
+            </p>
+        </dic>
+        <dic class="offset-1 col-3">
+            <p>
+            <img src="image/ng-repeat_02.png"  style="width: 450px; height: 400px;">
+            </p>
+        </dic>
+    </div>
+<hr class="my-4">
+<hr class="my-4">
+<div class="row">
+
+    <dic class="offset-2 col-4">
+        ng-Model passa valores do html para o "$scope" (controller) <br>
+        (input , select and texarea) <br><strong>"ng-model="record.operator"</strong><br>       
+
+        <ol>
+            <li>ng-click
+                <ul>
+                    <li>ng-click="addRecord(record)"</li>                                 
+                </ul>
+            </li>
+            <li>ng-disabled 
+                <ul>
+                    <li>ng-disabled="!record.name || !record.fone"</li>                                 
+                </ul>
+            </li>           
+            <li>ng-options
+                <ul>
+                    <li>Assim o nome vai aparecer na "label da table" e dar valor au "value". <br>
+                    <strong>"record.nome for operator in operators"</strong></li>    
+                    <li>Assim o nome vai aparecer na "label da table" mas o "value" receberar o valor do codigo.  <br>
+                        <strong>"record.codigo as record.nome for operator in operators"</strong></li>     
+                    <li>Assim o nome vai aparecer na "label da table" mas o "value" receberar o valor do codigo e vai dividir as opções por categoria.  <br>
+                           <strong> "operator.name as operator.name group by operator.category for operator in operators" </strong></li>                               
+                </ul>
+
+            </li>
+        </ol>
+
+    </dic>
+    <dic class="col-6">
+        <p>
+        <img src="image/ng-model_01.png" style="width: 650px; height: 400px; ">
+        </p>
+    </dic>    
+</div>
+
+        <hr class="my-4">
+        <div class="row">
+            <dic class="offset-2 col-4">
+                <strong>ng-style</strong> possibilita estilizar em tempo de execução.<br> No caso criei um um array de corres inserir em um <strong> ng-option </strong>, com botão permite mudar a cor da classe <strong> jumbotron</strong>     
+
+            </dic>
+            <dic class="col-6">
+                <p>
+                    <img src="image/ng-style_01.png" style="width: 650px; height: 150px; ">
+                </p>
+                <p>
+                    <img src="image/ng-style_02.png" style="width: 650px; height: 150px; ">
+                </p>
+            </dic>    
+        </div>
+        <hr class="my-4">
+
+
+        <div class="row">
+            <dic class="offset-2 col-4">
+            <strong>ng-class</strong>  You  can create several classes in css and switch classes within html      
+
+            </dic>
+            <dic class="col-6">
+                <p>
+                    <img src="image/ng-class_01.png" style="width: 300px; height: 150px; ">
+                    <img src="image/ng-class_02.png" style="width: 300px; height: 150px; ">
+                </p>
+            
+            </dic>    
+        </div>
+       
+        <div class="row" ng-class="home">
+                        
+            <div class="offset-4 col-6">    
+                <p>Choose a class:</p>
+
+                <select  class="form-control" ng-model="home">
+                <option value="">Select a class</option> 
+                <option value="sky">Sky</option>
+                <option value="tomato">Tomato</option>
+                </select>
+                
+                <div >
+                <h1>Home!</h1>
+                <p>In this case the "Home" class gets the values ​​from the "Sky" and "Tomato" css classes!</p>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+
+        <div class="row" style="margin-bottom: 10px;">
+            <dic class="offset-2 col-4">
+            <strong>ng-show</strong>  
+            
+            <button  class="btn btn-primary btn-block" ng-click="showfunction()"  >show </button>
+
+            </dic>
+            <dic class="col-6" ng-show="imgShow">
+                <p>
+                <img src="image/ng-show_01.png" style="width: 300px; height: 150px; ">
+                </p>       
+            </dic>    
+
+        </div>
+
+        <div class="row" style="margin-bottom: 10px;">
+            <dic class="offset-2 col-4">
+            <strong>ng-hide</strong>  
+            
+            <button  class="btn btn-primary btn-block" ng-click="hidefunction()"  >hide </button>
+
+            </dic>
+            <dic class="col-6" ng-hide="imgHide">
+                <p>
+                <img src="image/ng-hide_01.png" style="width: 300px; height: 150px; ">
+                </p>         
+            </dic>    
+
+        </div>
+
+
+        <div class="row" style="margin-bottom: 10px;">
+            <dic class="offset-2 col-4">
+            <strong>ng-if</strong> 
+            
+            <button  class="btn btn-primary btn-block" ng-click="iffunctionn()"  >ng-if </button>
+
+            <p> interacts with the DOM, placing and removing the element, better if it is not necessary to load the element when starting the page! </p>
+
+            </dic>
+            <dic class="col-6" ng-if="imgIf">
+                <p>
+                <img src="image/ng-if.png" style="width: 300px; height: 150px; ">
+                </p>         
+            </dic>    
+
+        </div>
+
+        <hr>
+        <p class="lead"  >This is a simple  unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr>
+        <div class="jumbotron" ng-style="{'background-color': color}">
+           
+            <h1 class="display-4">AngularJS 1.3</h1>
+           
+                <!--
+            <div class="row ">
+                <div class="offset-4 col-6 jumbotron">
+                    <h3>{{ app }} </h3>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Name</th>
+                            <th>Fone</th>
+                            <th>Operator</th>
+                        </tr>                    
+                        <tr ng-repeat="record in records">
+                            <th ng-repeat="(key,value) in record">
+                                {{value}}
+                            </th>                             
+                        </tr>
+                    </table>
+                </div>
+            </div>       
+          </div>
+          -->
+            <div class="row">
+                <div class="offset-2 col-8">
+                   
+                    <h3>{{ app }} </h3>               
+                            <table class="table table-striped">
+                                <tr>
+                                    <th></th>  <!--Possibilitar  obter a opção selecionada-->
+                                    <th>Name</th>
+                                    <th>Fone</th>
+                                    <th>Operator</th>
+                                </tr>
+                            
+                                <tr ng-class="{'selected negrito' :record.selected}"  ng-repeat="record in records">
+                                    <td><input type="checkbox" ng-model="record.selected"/> </td><!--Possibilitar  obter a opção selecionada eu criei o nome => "selected"-->
+                                    <td>{{record.name}}</th>    
+                                    <td>{{record.fone}}</th>
+                                <!-- <th>{{record.operator.name}}</th>   com o enviando o obj inteiro =>  
+                                     ng-options="operator.name for operator in operators"-->
+                                <th>{{record.operator}}</th>
+                                </tr>
+                            </table>
+                </div>
+            </div>
+            <hr>
+      
+          
+          <div class="container">
+
+                <hr>
+                <h6 style="margin-left: 35px;">ng-Model passa valores do html para JS (input , select and texarea)  </h6>
+          
+                <h6>exemplos ; ng-disabled   </h6>
+                <hr>
+
+
+               <div class="row">                
+                    <div class="offset-4 col-6">                  
+
+                        <input class="form-control" type="text" ng-model="record.name" placeholder="name" />
+                        <input class="form-control" type="text" ng-model="record.fone" placeholder="fone"/>
+                        <select  class="form-control" ng-model="record.operator" ng-options="operator.name as operator.name group by operator.category for operator in operators">
+                            <option value="">Select an operator</option> <!--option default-->
+                        </select>
+                        <button  class="btn btn-primary btn-block" ng-click="addRecord(record)" ng-disabled="!record.name || !record.fone" >Add Record</button>
+                        <button  class="btn btn-danger  btn-block" ng-click="deleteRecord(records)" ng-disabled="!isRecordSelected(records)"  >Delete Record</button>
+                    </div>
+                </div>
+
+                <div class="row" style="margin: 20px;">
+                    <hr>
+                    <h3 class="display-6">Button change value ng-style tags: footer and jumbotron</h3>
+                    <div class="offset-4 col-6">       
+                            <select  class="form-control" ng-model="selected" ng-options="item.color for item in colors">
+                            <option value="">White - Select a color</option> 
+                            </select>
+                        <button  class="btn btn-primary btn-block" style="margin-bottom: 10px;" ng-click="changeColor(selected.color)" >Change Color</button>                    
+                    </div>
+                </div>
+            </div>
+                
+               
+          </div>
+        </div>
+
+        <div class="row">       
+               
+            <div class="offset-4 col-6">    
+                <hr>
+                <h6 style="margin-left: 35px;"> Modal: exemplos de ng-required com ng-disabled </h6>
+          
+                <h6>Function ( ng-style="{'display': operatorModalShow}")  </h6>
+                <hr>    
+
+                <table class="table table-striped">
+                    <tr>
+                        <th></th>  <!--Possibilitar  obter a opção selecionada-->
+                        <th>Name</th>
+                        <th>Codigo</th>
+                        <th>Category</th>
+                    </tr>
+                
+                    <tr ng-class="{'selected negrito' :operator.selected}"  ng-repeat="operator in operators">
+                        <td><input type="checkbox" ng-model="operator.selected"/> </td><!--Possibilitar  obter a opção selecionada eu criei o nome => "selected"-->
+                        <td>{{operator.name}}</th>    
+                        <td>{{operator.codigo}}</th>
+                        <td>{{operator.category}}</th>
+                    
+                    </tr>
+                </table>
+                {{operator.selected}}
+                <hr>
+                <div class="btntable">
+                    <button  class="btn btn-primary btn-block"  ng-click="changeOperatorModalShow()" >Register Operator</button>                    
+                    <button  class="btn btn-danger  btn-block " ng-click="deleteOperator(operators)"  ng-disabled="!isOperatorSelected(operators)"  >Delete Operator</button>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+            <div ng-include="'footer.html'"> Inclusion footter</div>
+
+            <!--  exemplo de outro modo de ng-inglude
+            <div ng-include src="'footer.html'"> Inclusion footter</div>
+            -->
+
+            <div ng-include src="'modal.html'"> Inclusion modal</div>
+
+    </body>
+</html>

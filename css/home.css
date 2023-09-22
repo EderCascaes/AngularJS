@@ -1,0 +1,150 @@
+body{
+    overflow-x:  hidden;
+}
+
+
+.jumbotron{
+    width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  
+
+}
+.table{
+    margin-top: 20px;
+}
+
+.form-control{
+    padding: 5px;
+    margin: 5px;
+}
+
+.lead{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.selected{
+    background-color:rgb(10, 10, 5);
+}
+
+.negrito{
+    font-weight: bold;
+}
+
+
+.btntable{
+    margin: 5px;
+    background-color: #e6dddd !important;
+    padding: 10px;
+}
+
+/*ng-class - criando as classes */ 
+
+.sky {
+    color:white;
+    background-color:lightblue;
+    padding:20px;
+    font-family:"Courier New";
+}
+.tomato {
+    background-color:coral;
+    padding:40px;
+    font-family:Verdana;
+}
+
+
+.dropdown{
+    background-color: rgb(46, 46, 241);
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    color:white;
+ 
+}
+
+.lead{
+    text-align: center;
+
+}
+
+
+/*modal*/
+
+
+.modal{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    
+}
+.modalContent{
+    margin: 0 auto;
+    margin-top: 8%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+   }
+
+.moldal-body{
+    padding: 1px 8px 1px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #eee 1px;
+
+}
+
+.moldal-head{
+    padding: 1px 8px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #eee 2px !important;
+    background-color: #fbf8f8;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.title-model-head{
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.close-modal-head{
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.modal-body{
+    padding: 2px 8px 8px 8px;
+    width: 100%; 
+}
+
+.input-modal , .select-modal{
+    margin-bottom: 13px;
+    width: 100%;
+}
+
+.btn-modal{
+    margin-bottom: 0;
+    width: 100%;
+    padding-left: 10px;
+}
+
+
+.btn-modal .btn {
+    width: 100%;
+}
+
+.modal-footer{
+    border-top: solid #eee 2px !important;
+    padding: 3px !important;
+    background-color:  #fbf8f8 !important;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

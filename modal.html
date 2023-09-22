@@ -1,0 +1,30 @@
+
+          <!-- M o d  a  l   ex: ng-required=true    => ng-disabled="operatorForm.$invalid" -->
+
+        <div class="modal" ng-style="{'display': operatorModalShow}">
+            <div class="modalContent" >
+                <div class="moldal-head">
+                    <h3 class="title-model-head">{{ app }} </h3>  
+                    <span class="close-modal-head"  ng-click="changeOperatorModalShow()" >X</span>   
+                </div>
+                <div class="modal-body" >     
+                    <div  ng-init ="isCategorysNoRepet()">      
+                                
+                        <form name="operatorForm">
+                            <input class="form-control input-modal" type="text" ng-model="operator.name" placeholder="name" ng-required="true" />
+                            <input class="form-control input-modal" type="text" ng-model="operator.codigo" placeholder="codigo" ng-required="true"/>
+                    
+                            <select  class="form-control select-modal" ng-model="operator.category"  ng-options="category  for category in arrayNoRepet" ng-required="true">
+                                <option value="">Select an category</option> 
+                            </select>                                
+                        </form>
+                        <div class="btn-modal">
+                            <button  class="btn btn-primary btn-block " ng-click="addOperator(operator)" ng-disabled="operatorForm.$invalid" >Add Operator</button>                               
+                    </div>
+                    </div>                           
+                </div>  
+                <div class="modal-footer">
+                    <button  class="btn btn-primary btn-block" style="margin-bottom: 10px;" ng-click="changeOperatorModalShow()" >Close</button>   
+                </div>
+        </div>
+      </div>
