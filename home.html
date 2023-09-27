@@ -332,7 +332,7 @@
                 
                     <tr ng-class="{'selected negrito' :operator.selected}"  ng-repeat="operator in operators">
                         <td><input type="checkbox" ng-model="operator.selected"/> </td><!--Possibilitar  obter a opção selecionada eu criei o nome => "selected"-->
-                        <td>{{operator.name}}</th>    
+                        <td >{{operator.name}}</th>    
                         <td>{{operator.codigo}}</th>
                         <td>{{operator.category}}</th>
                     
@@ -348,14 +348,16 @@
             </div>
         </div>
 
-
             <div ng-include="'footer.html'"> Inclusion footter</div>
 
             <!--  exemplo de outro modo de ng-inglude
             <div ng-include src="'footer.html'"> Inclusion footter</div>
             -->
-
+            
             <div ng-include src="'modal.html'"> Inclusion modal</div>
+      
 
+           
+           
     </body>
 </html>

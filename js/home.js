@@ -10,6 +10,7 @@ angular.module("listFones").controller("listFonesCtrl",  function($scope){
     $scope.arrayNoRepet = [];
     $scope.operatorModalShow = "none"
 
+
    
 
     $scope.valueInput = "Ederson Mendes";
@@ -22,15 +23,27 @@ angular.module("listFones").controller("listFonesCtrl",  function($scope){
      //  $scope.records.push({name:name, fone: fone});
          $scope.records.push(angular.copy(record));
          delete $scope.record;
+         $scope.operatorForm.SetPristine();
+
+};
+
+$scope.TestAngular  = function(){
+    var divconteudo = document.getElementsByClassName("produtosIntTitulo margin-top-30")[0].TEXT_NODE;
+    let a = document.getElementById("orcamentoAssuntoForm");
+ 
+    console.log(" divconteudo : "+divconteudo);
+    console.log(" divconteudo  a : "+ a)
+
 };
 
 $scope.showfunction = function(){
 
-    if($scope.imgShow == true){
+    if($scope.imgShow == true){        
         $scope.imgShow = false
     }else{
         $scope.imgShow =true;
     }
+    this.TestAngular();
 };
 
 $scope.hidefunction = function(){
@@ -108,14 +121,19 @@ $scope.iffunctionn = function(){
 
 
     $scope.changeOperatorModalShow = function(){
-        if($scope.operatorModalShow === "none"){
+
+    
+        if($scope.operatorModalShow === "none"){           
             $scope.operatorModalShow = "block"
         }else{
-            delete $scope.operator;
+            document.getElementById("nameModal").value = '';
+            document.getElementById("codeModal").value = '';            
+            document.getElementById("selectModal").value = "";
             $scope.operatorModalShow = "none";
-        }
-      
+        }   
     };
+
+ 
     
     $scope.isCategorysNoRepet = function(){
         let array = $scope.operators;  
